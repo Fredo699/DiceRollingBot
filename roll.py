@@ -46,10 +46,13 @@ while True:
 			# Replies to comments with different random number intervals
 			
 			already_done[already_done_cntr] = comment.id
+			if already_done_cntr == 199:
+				print("Starting new iteration of already_done[]")
+				already_done_cntr = 0
 			already_done_cntr += 1
 			# sets previous comment in already_done array
 			
-	submission = r.get_subreddit('redditroleplay').get_new(limit=100)
+	submissions = r.get_subreddit('redditroleplay').get_new(limit=100)
 	# Refreshes list of submissions.
 	
 	time.sleep(5)
